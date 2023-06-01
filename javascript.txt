@@ -1,0 +1,477 @@
+01/06/23
+
+CONT -- DOM - DOCUMENT OBJECT MODEL - VERTENTE WEB do javascript
+
+
+
+getElementById()
+var d=window.document.getElementById('msg') >foi marcada uma DIV com uma ID= 'msg'
+ 	d.style.background='green'
+        d.style.color='yellow'
+        d.style.fontSize='2em'
+
+
+getElementsByName()
+
+
+getElementsByClassName()
+
+	var b=window.document.getElementsByClassName('msg')[0] marcada a classe MSG, a primeira que aparece com o nome
+        b.style.background='yellow'
+
+
+querySelector() >>metodo mais recente do ACME SCRIPT, para selecionar as modificações direto na classe ou ID 
+       var d=window.document.querySelector('div#msg')
+       d.style.color='orange'
+       d.style.background='green'
+
+
+querySelectorAll()
+
+
+
+EVENTOS DOM
+
+ <div id="area" onclick="clicar()">
+        Interaja...
+
+    </div>
+
+
+   <script>
+        function clicar(){
+            var a=window.document.getElementById('area')
+            a.innerText= 'Hahahahahahaha!'
+
+        }
+
+    </script>
+==========================================
+mais funções de exemplo de mouse
+
+    <div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseleave="sair()">
+        Interaja...
+
+    </div>
+
+
+<script>
+        var a=window.document.getElementById('area') >>>>variavel colocada por fora das funções para funcionar em todas, não é o mais indicado devido a memoria
+        function clicar(){
+            
+            a.innerText= 'Hahahahahahaha!'
+
+        }
+        function entrar(){
+
+            a.innerText='passou o mouse'
+        }
+        function sair(){
+            a.innerText='tirou o mouse'
+        }
+ </script>
+
+===============================================
+
+EVENTS LISTENERS
+
+para não poluir o HTML,com os comandos dentro da DIV, usar os event listeners chamando as funções dentro do script
+
+        var a=window.document.getElementById('area')
+        a.addEventListener('click', clicar)
+        a.addEventListener('mouseenter', entrar)
+        a.addEventListener('mouseleave',sair)
+
+
+
+
+DETECÇÃO DE ERROS
+inspecionar no dev tools
+
+usando campos de forms para somas
+==========================================================
+ <h1>somando valores</h1>
+    <input type="number" name="numero1" id="inumero1">+
+    <input type="number" name="numero2" id="inumero2">
+    <input type="button" value="somar" onclick="somar()">
+    <div id="res">resultado</div>
+
+
+<script>
+        function somar(){
+
+            var tn1=window.document.getElementById('inumero1')
+            var tn2=window.document.querySelector('input#inumero2')
+            var res=window.document.getElementById('res')
+            var n1=Number(tn1.value)
+            var n2=Number(tn2.value)
+            var s=n1+n2
+            res.innerHTML=`O resultado da soma é= ${s}`
+        }
+    </script>
+===========================================================
+
+
+
+
+
+
+31/05/23
+
+OPERADORES
+aritmeticos, atribuição, relacionais, lógicos, ternário 
++
+-
+*
+/
+% resto da divisão inteira 
+** potencia
+
+5 + 3 / 2  prioridade será a divisão primeiro = 6,5
+(5+3) /2 prioridade parentesis =4
+
+precedencia dos operadores
+( )
+**
+* / %
++ -  
+
+
+AUTO ATRIBUIÇÕES
+var n=3
+n=n+4
+
+AUTOATRIBUIÇÃO SIMPLIFICADA
+n+=4 soma conteudo varN+4
+
+
+INCREMENTO
+X=x+1  >>>>>>> x++
+x=x-1  >>>>>>> x--
+
+
+
+
+OPERADORES RELACIONAIS JS
+>
+<
+>=
+<=
+==
+!=
+
+primeiro se revolve operadores aritmeticos depois os relacionais
+
+
+
+operador de identidade restrita (do mesmo valor e do mesmo tipo)
+=== identico
+!== nao identico
+ex: variaveis com o memso conteudo sendo uma string outra numero, serao iguais mas não identicas(===)
+
+
+
+OPERADORES LOGICOS
+! negação
+&& conjunção (E lógico)  as duas condições precisam ser verdadeiras
+|| disjunção (OU lógico) basta uma das condições ser   verdadeira
+
+
+a   >>>>>> primeiro as operações aritmeticas, depois os relacionais depois os operadores lógicos 
+
+
+em uma mesma expressão se tiver varios operadores diferentes um **&&** um **||** e um **!** a ordem de execução será  NÃO !, depois o E && , depois o OU ||
+
+
+ex:
+ idade>=15 && idade<=17 >>> idade entre 15 e 17?
+ estado=='RJ' || estado =='SP' >>> estado é RJ ou SP
+salario > 1500 && sexo!='M'
+
+PRECEDENCIA 
+ () ** / 
+> < >=
+!
+&&
+||
+
+
+OPERADOR TERNARIO junta 3 operandos. o que acontece ser for verdadeiro e o que acontece se for falso
+será sempre o ultimo a ser feito
+? : 
+TESTE ? TRUE  : FALSE 
+
+ex
+
+
+> media
+5.5
+> media>7?'aprovado':'reprovado'
+'reprovado'
+
+
+var x = 8
+var res= x % 2 == 0 ? 5:9
+
+
+> var r=idade>=18? 'MAIOR':'MENOR'
+
+ex:
+var altura=190
+
+> var tamanho = altura > 180 ? 'ALTO':'BAIXO'
+
+> tamanho
+'ALTO'
+
+
+
+
+==========
+
+DOM - DOCUMENT OBJECT MODEL - VERTENTE WEB do javascript
+
+instalação do complemento VS CODE E COMPLEMENTO DO CHROME LIVE SERVER
+
+árvore DOM
+window
+location | document  | history
+	 |   HTML    |
+	 |HEAD|  BODY|	
+
+navegar na arvore DOM por MARCA, POR ID, POR NOME, POR CLASSE, POR SELETOR
+
+MARCA getElementsByTagName()
+
+ var p1=window.document.getElementsByTagName('p')[0] - selecionando primeiro P aragrafo que consta
+ ${p1.innerText}
+
+
+ var corpo=window.document.body
+ corpo.style.background='blue'
+
+    document.write(p1.innerHTML)
+InnerText pega o texto tem formatação | InnerHTML pega o texto com formatação
+
+
+
+
+
+
+30/05/23 JavaScript e ECMAScript
+
+VARIAVEIS E TIPOS DE DADOS
+
+
+======================
+COMENTARIOS //         
+
+/* 
+ 
+ */
+======================
+
+VAR
+
+N1=8.5
+S1="JavaScript"
+
+iniciar NODE.JS dentro do VSCODE - terminal - novo terminal. digitar node
+sair - exit
+
+limpar o terminal ctrl + l
+
+variáveis são case sensitive
+
+
+TIPOS PRIMITIVOS DE VARIAVEIS  - typeof (consultar tipo da var. ex : typeof nome)  
+
+NUMBER >infinity / NaN(not a number)
+
+STRING
+
+BOOLEAN
+
+NULL 
+
+UNDEFINED
+
+OBJECT >ARRAY(vetor)
+
+FUNCTION
+
+
+
+
+TRATAMENTO DE DADOS
+
+
+tratando dados inseridos num prompt, e concatenando os dados para exibição
+
+        var nome = prompt('qual o seu nome ?')
+        alert ('Como vai, ' + nome +' tudo bem?') >contatenando string com VAR
+
+CONVERÇÃO STRING PARA NUMERO
+
+prompt do navagador transforma as informações em String, mesmo se o que for digitado seja um numero
+por isso uma soma de var não dara certo se não for informado ser um string
+
+transformar em numero:
+Number.parseInt(n) >num inteiro
+Number.parseFloat(n)>num fracionado
+
+
+ex:
+       var n1=Number.parseInt(prompt('digite um numero'))
+       var n2=Number.parseInt(prompt('digite outro numero'))
+        var s =n1 + n2
+        alert('a soma dos valores digitados é :' + s)  >>>>concatenando o texto exibido com VAR
+
+exemplo simplificado, o javascript devine automativamente se é float ou int
+
+ex:
+       var n1=Number(prompt('digite um numero'))
+       var n2=Number(prompt('digite outro numero'))
+
+
+
+CONVERSAO NUMERO PARA STRING
+
+String(n)
+n.toString()
+
+>>>>>>Template strings` ` (usando placeholder, outra opção alem e concatenar)
+
+
+${s} >placeholder, frase cercada de CRASES ``
+`estou aprendendo ${s}`  s=variavel
+
+
+ex:
+> `o aluno ${nome} de idade ${idade} tirou a nota ${nota}`
+'o aluno pedro de idade 41 tirou a nota 9.5'
+
+
+
+exemplo no visual studio 
+alert(`A soma dos valores ${n1} + ${n2} é igual a: ${s}`)
+
+=======================
+FORMATAÇÃO DE STRINGS
+
+s.length (quantas letras tem a string)
+s.toUpperCase() transformar em maiusculas 	
+s.toLowerCase()
+
+ex:
+ alert(`OK, ${sobrenome.toUpperCase()}, ${nome.toUpperCase()}. Vai estudar `)
+
+alert(`total de palavras no nome ${nome.length}`)
+
+
+COMANDO document.write PARA EXIBIÇÃO DE INFORMAÇÕES NA TELA
+
+
+
+FORMATAÇÃO DE NUMEROS
+
+
+> n1.toFixed(2) -formata o numero para duas casas decimais
+
+
+> n1.toFixed(2).replace ('.' , ',' )
+'1545,50' >>> função para substituir . por , no separador decimal
+
+transformar valor de variavel em moeda
+
+> n1.toLocaleString('PT-BR', {style:'currency', currency:'BRL'})
+'R$ 1.545,50'
+
+
+
+
+
+
+18/05/23 JavaScript e ECMAScript
+
+Tecnologia client side
+
+códigos exemplo console chrome: document.body.style.background='black'
+
+JS e J baseados na linguagem C
+
+1997 ECMA Script = Javascript padronizada
+2009 ECMA5- ES5 compativel com JSon
+2015 ES6
+
+LINGUAGENS DERIVADAS 
+JQuery - biblioteca
+Angular- linguagem declarativa
+React -(facebook)
+VUE -  framework criado por ex programador do Google
+Electron . mantido pela Github. interfaces graficas (Visual Studio Code foi feito o usando)
+Ionic- SDK aplicações para dispositivos moveis
+Cordova - Nas mãos da Apache
+ 
+2010 Node JS rodar JS dentro de um servidor fora do navegador
+
+
+
+BIBLIOTECAS PARA CRIAÇÃO DE JOGOS
+phazer
+PixiJS
+Impact
+Melon.js
+Crafty.JS
+
+
+BIBLIOGRAFIA
+javascript o guia definitivo - orely
+javascript guia do programador
+
+guia de referencia da mozilla - https://developer.mozilla.org/pt-BR/   https://developer.mozilla.org/pt-BR/docs/Web/JavaScript
+
+guia de referencia da ECMA - https://www.ecma-international.org/  https://www.ecma-international.org/publications-and-standards/standards/
+ECMA 262 https://www.ecma-international.org/publications-and-standards/standards/ecma-262/
+
+
+curso trata dos padrões, as mais populares da regulamentação do JS
+ECMA-262, 6th edition, June 2015 https://262.ecma-international.org/6.0/
+ECMA-262, 7th edition, June 2016
+
+
+instalação Node.JS
+instalação automática chocolately e pacotes necessários 
+
+==========================================================
+script exemplo, ultima linha antes de fechar o body do HTML
+
+ <script>
+        window.alert('Primeira ,mensagem Javascript')
+   </script>
+>não é obrigatório ; no javascript
+> pode usar apenas:  alert('')
+=========================================================
+
+window.confirm('Piece of Mind é o melhor album?') 
+>confirmação c/ ok e cancel
+
+prompt('qual o nome  do baixista?')
+>campo para preencher
+
+
+VARIAVEIS E TIPOS DE DADOS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
