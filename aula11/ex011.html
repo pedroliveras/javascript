@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nacionalidade</title>
+</head>
+<body>
+    <h1>compara texto</h1>
+        <form action="cadastro.php">
+            <label for="ipais">Nacionalidade</label>
+            <input type="text" name="pais" id="ipais">
+            <input type="button" value="Verificar" onclick="verifica()" >
+            <input type="reset" value="Limpar">
+        </form>
+        <div id="res">
+
+        </div>
+    
+
+        <script>
+            function verifica(){
+
+                var pais=window.document.querySelector('input#ipais')
+                var nac=String(pais.value)
+
+                nac=nac.toUpperCase()
+                if (nac=='BR' || nac=='BRASIL' || nac=='BRASILEIRO'){
+                    res.innerHTML='BRASILEIRO'
+                    res.innerHTML+=`<br>Sinto muito, você digitou <strong>${nac}</strong>, mais sorte na próxima vez`
+                }else{
+                    res.innerHTML='GRINGO'
+                }
+                res.innerHTML+='<br>NACIONALIDADE VERIFICADA COM SUCESSO'
+                
+            }
+
+        </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de exercicio</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header>
+        <h1>Vamos Contar</h1>
+
+    </header>
+    <section>
+        <div>
+            <form action="cadastro.php"></form>
+            <p>
+                <label for="itxtinicio">Inicio</label>
+                <input type="number" name="txtinicio" id="itxtinicio">
+                
+            </p>
+            <p>
+                <label for="itxtfim">Fim</label>
+                <input type="number" name="txtfim" id="itxtfim">
+
+            </p>
+            <p>
+                <label for="itxtpasso">Passo</label>
+                <input type="number" name="txtpasso" id="itxtpasso">
+            </p>
+            <input type="button" value="Contar" onclick="contar()">
+            <input type="reset" value="Limpar">
+
+            </form>
+        </div>
+        <div id="res">
+
+        </div>
+
+    </section>
+    <footer>
+        <p>Pedroliveras</p>
+    </footer>
+    
+
+ <script src="script.js"></script>   
+</body>
+</html>

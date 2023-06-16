@@ -1,3 +1,444 @@
+16/06
+
+resolução exercicios vetor JS
+
+DEFINIR O FOCO DO CURSOR EM UMA CAIXA DE TEXTO
+
+var num=window.document.getElementById('itxtnum')
+num.value='' >>apagar conteudo<<<
+num.focus() >>> trazer o foco | num variável<<<<
+
+
+
+PROXIMOS PASSOS
+
+-funções em Javascript
+>>arrow functions | callbacks | funções anonimas  | IIFE
+javascript funcional
+
+orientação a objetos - (ex: PHP e JAVA)
+
+modularização - utilizar codigos em modulos, em arquivos separados
+>>reutilizar codigos em javascript
+
+expreções regulares (RegEx)
+
+JSON -  esturuta de objeto para salvar dados localmente
+
+Ajax
+
+NodeJs
+
+
+
+
+
+OBJETOS
+
+
+
+
+15/06
+
+
+VARIAVEIS COMPOSTAS (ARRAY/VETORES)
+
+VARIAVEIS SIMPLES so consrguem armazenar um valor  por vez
+VARIAVEIS COMPOSTAS armazenam varios valores em uma mesma estrutura
+
+vaga a =[]
+
+let num=[5,8,4] let similar ao VAR
+var num =[ , , ]
+
+num[3]=6 >> inserir o numero 6 na posição [3] do vetor  pos 0, 1, 2 ,3
+num.push(7) >> inserir o numero 7 na ULTIMA posição do vetor
+
+num.length >>comprimento do vetor *ex 3*
+num.sort >> ordenar os numeros do vetor em ordem crescente
+
+
+
+exibir os dados do vetor um a um e por estruturas de repetição
+
+
+console.log(num[0]) exibir numero na primeira posição do vetor
+console.log(num[1]) exibir numero na segunda posição do vetor
+console.log(num[2]) exibir numero na terceira posição do vetor
+console.log(num[3]) exibir numero na quarta posição do vetor
+console.log(num[4]) exibir numero na quinta posição do vetor
+>>modo manual
+
+for (let pos=0;pos<num.length;pos++){
+	console.log(num[pos])
+}
+
+>>com estruturas de repetição
+
+
+
+
+for (let pos in num){
+	console.log(num[pos])
+
+} 	
+>>>maneira siplificada do ACME SCRIPT  
+For otimizado para trabalhar com variaveis compostas
+
+
+
+
+BUSCAR VALORES DENTRO DE UM VETOR
+num.indexOf(44) 
+>mostra a posição onde está o numero 44 no vetor (retorna -1 se não localizar)
+
+
+
+FUNÇÕES EM JS (CONTINUAÇÃO)
+
+pertencem a funções - chamada, conjunto de parametros, ação , retorno
+
+
+ex. 
+function  clicar (PARAMETROS){
+}
+clicar(5) >>pula a função e executa didreto esta chamada. valor 5 vai para o parametro
+
+
+ex2.
+function parimp(n){       >>n recebe 11
+
+if (n%2==0){
+	return'par'
+	}else{
+	return'impar'
+	}
+
+}
+
+
+let res=parimp(11) >>>chamada, 11 é par? armazena o resultado na variavel
+
+console.log(parimp(4)) >chamar a função direto sem guadrar em variavel e exibir result
+
+
+
+
+ex3.:
+function soma(n1=0,n2=0){
+    return n1+n2
+
+}
+console.log(soma(3,4))
+
+
+
+ex4:
+let v = function(x){
+
+return x*2
+}
+
+console.log(v(5))
+>>>usando uma função direto em um avariavel
+ 
+
+
+function fatorial(n){
+    if(n==1){
+        return 1
+    }else{
+
+        return n*fatorial(n-1)
+    }
+
+}
+>>>>>função chamando a propria função (recursivo)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+14/06
+resolução exercicios js 1 e 2
+
+
+
+criar elemento em lista (SELECT) usando JS
+	var item=document.createElement('option')
+   	item.text= `${n} x ${c} = ${n*c}`
+	item.value= `tab ${c}` // sabendo qual item selecionou na lista
+        tab.appendChild(item)  (tab é a variável criada para armazenar os dados da lista ex.: var numlist=document.getElementById('ilista')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+12/06 
+resolução exercicios 1
+
+
+
+
+
+
+
+
+
+07/06/23
+
+exercicios
+
+
+
+
+
+
+
+
+06/06/23
+exercicios EXEMPLO PAGINA HTML 5 CSS3 COM USO INTERATIVO DE JAVASCRIPT
+
+
+var res=window.document.getElementById('res') >é uma div que aparecerá o resultado
+
+var idade= ano - Number(fAno.value)
+ res.innerHTML=`Idade ${idade}`
+
+res.style.textAlign='center'
+
+
+if (fsex[0].checked){
+            
+        }
+>>>TESTAR RADIO BUTTON SELECIONADO(no caso testando a primeira instancia)
+
+
+CRIAR  UM ELEMENTO DINAMICAMENTE NO JS (EX015 05/06 e 06/06)
+
+ var img = document.createElement('img')
+        img.setAttribute('id, 'foto')
+
+
+
+res.appendChild(img)  > adicionará depois do texto ( da variável 'res', uma DIV) a imagem dinamicamente
+
+
+
+
+
+ESTRUTURAS DE REPETIÇÕES / LAÇOS / ITERAÇÕES
+
+WHILE(  ) {
+}
+ 
+var c=1
+while (c<=6) {
+    console.log('vai catar coquinho?')
+    c++
+
+}
+
+
+do {
+
+} while ( ) 
+
+
+
+
+
+do {
+    console.log(`passada ${c}`)
+    c++
+
+}while (c<=10)
+
+
+
+
+FOR(INICIO;TESTE;INCR){
+}
+
+
+for (var c=1; c<=5;c++){
+    console.log(c)
+}
+MODO DE DEPURAÇÃO
+buscar modo de depuração JS no VSCODE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5/06/23
+
+exercicios EXEMPLO PAGINA HTML 5 CSS3 COM USO INTERATIVO DE JAVASCRIPT 
+
+
+script rodando de um arquivo EXTERNO
+
+ <script src="script.js"></script>   
+</body>
+
+
+mudando a cor do fundo com IF(pode ser aplicado no modo noite)
+if (hora >=0 && hora<12 ){
+    //BOM DIA
+    img.src='fotomanha.png'
+    document.body.style.background= '#e2cd9f'  
+
+
+
+mudando a cor do elemento com DOM (pode ser aplicado no modo noite)
+document.getElementById("p2").style.color = "blue";
+
+
+
+
+
+
+
+
+02/06/23
+
+
+
+EXERCICIO
+===========================================================4
+ <h1>compara texto</h1>
+        <form action="cadastro.php">
+            <label for="ipais">Nacionalidade</label>
+            <input type="text" name="pais" id="ipais">
+            <input type="button" value="Verificar" onclick="verifica()" >
+            <input type="reset" value="Limpar">
+        </form>
+        <div id="res">
+
+        </div>
+
+
+ 	<script>
+            function verifica(){
+
+                var pais=window.document.querySelector('input#ipais')
+                var nac=String(pais.value)
+
+                nac=nac.toUpperCase()
+                if (nac=='BR' || nac=='BRASIL' || nac=='BRASILEIRO'){
+                    res.innerHTML='BRASILEIRO'
+                    res.innerHTML+=`<br>Sinto muito, você digitou <strong>${nac}</strong>, mais sorte na próxima vez`
+                }else{
+                    res.innerHTML='GRINGO'
+                }
+                res.innerHTML+='<br>NACIONALIDADE VERIFICADA COM SUCESSO'
+                
+            }
+
+        </script>
+============================================================
+
+
+
+CONDIÇÕES PT2
+
+
+PEGAR HORA DO COMPUTADOR
+var agora = new Date()
+var hora=agora.getHours()  getMinutes() getMonth()
+
+
+
+
+condições aninhadas 
+
+var idade=25
+if(idade<16){
+    console.log('Nao vota')
+}else if (idade<18 || idade>65){
+        console.log('voto opcional')
+}else {
+    console.log('Voto obrigatório')
+} 
+    
+
+
+CONDIÇÕES MULTIPLAS
+
+
+SWITCH / CASE
+usa BREAK após cada CASE
+
+
+ex
+var agora= new Date()
+var diaSem=agora.getDay()
+
+console.log(diaSem)
+switch(diaSem){
+    case 0:
+        console.log('Domingo')
+        break
+    case 1:
+        console.log('Segunda')
+        break
+    case 2:
+        console.log('Terça')
+        break
+    case 3:
+        console.log('Quarta')
+        break
+    case 4:
+        console.log('Quinta')
+        break
+    case 5:
+        console.log('Sexta')
+        break
+    case 6:
+        console.log('Sabado')
+        break
+    default:
+        console.log('ERRO . Dia Invalido')
+        break
+
+}
+
+
+
 01/06/23
 
 CONT -- DOM - DOCUMENT OBJECT MODEL - VERTENTE WEB do javascript
@@ -110,6 +551,42 @@ usando campos de forms para somas
         }
     </script>
 ===========================================================
+
+
+CONDIÇÕES
+=============================================
+escrever na tela no JS - console.log('texto')
+F8 rodar o codigo JS no ocnsole dentro do VSCODE
+=============================================
+
+
+CONDIÇÃO SIMPLES 
+
+var vel = 80.5
+console.log(`A velocidade do carro é ${vel}km/h`)
+
+if (vel>60){
+    console.log('Voce ultrapassou a velocidade permitida. MULTADO')
+}
+
+console.log('Dirija sempre com cinto de segurança')
+
+
+CONDIÇÃO COMPOSTA
+
+var pais='BRASIL'
+if (pais=='BRASIL'){
+
+    console.log('Brasileiro')
+}else{
+
+    console.log('Estrangeiro')
+}
+
+
+
+
+
 
 
 
@@ -464,7 +941,9 @@ VARIAVEIS E TIPOS DE DADOS
 
 
 
-
+COMANDOS OUTPUT JS
+ALERT('')
+PROMPT('')
 
 
 
